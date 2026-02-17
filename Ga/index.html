@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Valentine 💖</title>
+
+<!-- 🌸 FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Oregano&family=Playfair+Display:wght@600&family=Allura&display=swap" rel="stylesheet">
+
+<style>
+/* ===== GLOBAL ===== */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Oregano', cursive;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== FULL BACKGROUND IMAGE ===== */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("background.jpg") center/cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.1);
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+
+/* ===== SECTIONS ===== */
+section {
+  display: none;
+  min-height: 100vh;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section.active { display: block; }
+
+h1 { font-size: 3rem; }
+p  { font-size: 1.4rem; }
+
+button {
+  background: #ffffff;
+  color: #c7374a;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+  font-family: 'Oregano', cursive;
+}
+
+button:hover {
+  background: #f2f2f2;
+}
+
+.main-img {
+  width: 260px;
+  margin: 25px 0;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade { animation: fade 1.5s; }
+.slide { animation: slide 1.5s; }
+.zoom { animation: zoom 1.5s; }
+
+@keyframes fade {
+  from {opacity:0}
+  to {opacity:1}
+}
+@keyframes slide {
+  from {transform:translateY(50px); opacity:0}
+  to {opacity:1}
+}
+@keyframes zoom {
+  from {transform:scale(.7); opacity:0}
+  to {opacity:1}
+}
+
+/* ===== LETTER PAGE (UNCHANGED FONTS) ===== */
+.letter-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.letter-paper {
+  background: #fff7ef;
+  color: #c7374a;
+  width: 780px;
+  max-width: 95%;
+  padding: 50px;
+  border-radius: 22px;
+  box-shadow: 0 25px 50px rgba(0,0,0,.4);
+}
+
+.letter-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 3px;
+}
+
+.letter-meta {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.letter-meta span,
+.letter-heading,
+.letter-text,
+.valentine {
+  font-family: 'Allura', cursive;
+}
+
+.letter-heading {
+  font-size: 36px;
+  text-align: left;
+}
+
+.letter-text {
+  font-size: 24px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.letter-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* ===== LYRICS ===== */
+.line {
+  font-size: 22px;
+  opacity: 0;
+  animation: lyricFade 1s forwards;
+}
+
+.line:nth-child(1){animation-delay:.5s}
+.line:nth-child(2){animation-delay:1.5s}
+.line:nth-child(3){animation-delay:2.5s}
+.line:nth-child(4){animation-delay:3.5s}
+.line:nth-child(5){animation-delay:4.5s}
+.line:nth-child(6){animation-delay:5.5s}
+
+@keyframes lyricFade {
+  from {opacity:0; transform:translateY(10px)}
+  to {opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎶 MUSIC -->
+<audio id="bg-music" loop>
+  <source src="i-think-they-call-this-love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🏠 HOME -->
+<section id="home" class="active fade">
+  <h1>Hey My Love 💕</h1>
+  <img src="cartoon love.jpg" class="main-img">
+  <p>I made something special just for you 🌊</p>
+  <button onclick="go('memories')">Next ➜</button>
+</section>
+
+<!-- 💞 MEMORIES -->
+<section id="memories" class="slide">
+  <h1>Every Moment With You 💞</h1>
+  <img src="couple.jpg" class="main-img">
+  <p>You make my world calmer and brighter 🤍</p>
+  <button onclick="go('letter')">A Letter For You 💌</button>
+</section>
+
+<!-- 💌 LETTER -->
+<section id="letter" class="zoom">
+  <div class="letter-wrapper">
+    <div class="letter-paper">
+      <h1 class="letter-title">A LOVE LETTER</h1>
+
+      <div class="letter-meta">
+        <div><strong>TO:</strong> <span>My Love Adithyan</span></div>
+        <div><strong>FROM:</strong> <span>Gayathri</span></div>
+      </div>
+
+      <h2 class="letter-heading">My Love,</h2>
+
+      <p class="letter-text">
+        Ithu vare letter onnum ezhuthathkond enik arinjuda evidun paranju thudaganam en....
+        nammal agane valentine's day onnum celebrate cheyunna kuttathil allalo chumma erunnapo oru reel kannd nthukond cheythu nokikuda enn vechu njn
+        sathyam parayalo adithyahh...ni oru sambhavam ahn nine samadhikanam ene pole oranathine egane kond nadakan athum ee 4varsham ayittu. Egane sadhikunnu ninak?
+        and i feel grateful that i have you...cuz you are the who always put efforts to stay with me...Enik edak thonnar ind ni enne nokunnath pole vere arum orikalum 
+        enne sahich nilkulla...athoke kond thane avanam enik nine ithrom ishttapedan ulla krym...ethrayoke enne karayippichallum njn pinnehm pinnehm ninte aduth varunnath athukond thanne 
+        ahn.Enik ariyam ninte aduth nin kittuna oru sneham ath vere oridath nin kittulla en.Kure oke eniyum ninod parayanam en ind pakesh onnum parayan pattanila..ntho enik nannam varunn
+        nammal egane onnum cheyatha kond avum..avooo nthelum avattee...last ayittu oru krym kude I LOVE YOU SOO MUCHHH....UMMAHHH...Ethra oke vazhak pidichalum angottum egottum
+        vishamippichalum...athoke randperkum marannum shemichum eniyum munottu povan pattatte ena otta prarthanaye ullu enikk...please be stay with me and love me always you do....
+        Thankyou for choosing me even you have much more options in front of you and Thankyou for came into my life.........
+      </p>
+
+      <div class="letter-footer">
+        <span class="valentine">Happy valentine’s day</span>
+      </div>
+
+      <button onclick="go('lyrics')">Our Song 🎶</button>
+    </div>
+  </div>
+</section>
+
+<!-- 🎶 LYRICS -->
+<section id="lyrics" class="fade">
+  <h1>This Song Feels Like Us 💞</h1>
+  <p class="line">When all I dream of is your eyes</p>
+  <p class="line">All I long for is your touch</p>
+  <p class="line">Darling something tells me that's enough</p>
+  <p class="line">You can say that I'm a fool</p>
+  <p class="line">And I don't know very much</p>
+  <p class="line">But I think they call this love 💕</p>
+
+  <button onclick="go('proposal')">One Last Question 💍</button>
+</section>
+
+<!-- 💍 PROPOSAL -->
+<section id="proposal" class="zoom">
+  <h1>Will You Be My Valentine? 🌹</h1>
+  <img src="heart.jpg" class="main-img">
+
+  <div>
+    <button onclick="yes()">YES 💘</button>
+    <button onmouseover="move(this)">NO 🙈</button>
+  </div>
+
+  <p id="answer"></p>
+</section>
+
+<script>
+/* PAGE NAV */
+function go(id){
+  document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  startMusic();
+}
+
+/* MUSIC */
+const music = document.getElementById("bg-music");
+function startMusic(){
+  if(music.paused){
+    music.volume = 0.6;
+    music.play().catch(()=>{});
+  }
+}
+document.body.addEventListener("click", startMusic, { once:true });
+
+/* PROPOSAL */
+function yes(){
+  document.getElementById("answer").innerText =
+  "Yayyy 💕 You just made me the happiest 🌹 LOVE YOU 💖";
+}
+
+function move(btn){
+  btn.style.position="absolute";
+  btn.style.left=Math.random()*80+"%";
+  btn.style.top=Math.random()*80+"%";
+}
+</script>
+
+</body>
+</html>
